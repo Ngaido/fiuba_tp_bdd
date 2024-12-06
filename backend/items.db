@@ -1,0 +1,7 @@
+{"name":"Camisa","description":"camisa linda","price":"199","stock":"23","attributes":[{"key":"color","value":"rojo"},{"key":"tempratura","value":"frio"}],"_id":"U6xgSZQwCf0fHaiC"}
+{"$$deleted":true,"_id":"U6xgSZQwCf0fHaiC"}
+{"name":"Camisa Polo","description":"Camisa polo de algodón, ideal para actividades deportivas y casuales.","price":"5000","stock":"30","attributes":[{"key":"Material","value":"Algodón"},{"key":"Color","value":"Azul"}],"_id":"Q4xVGud3xQEnltj3"}
+{"name":"Auriculares Inalámbricos","description":"Auriculares bluetooth con cancelación de ruido y batería de larga duración.\n","price":"3500","stock":"80","attributes":[{"key":"Conectividad","value":"Bluetooth 5.0"}],"_id":"msexljyVp3tsMdkU"}
+{"name":"Camisa Polo","description":"Camisa polo de algodón, ideal para actividades deportivas y casuales.","price":"5000","stock":"30","attributes":[{"key":"Material","value":"Algodón"},{"key":"Color","value":"Rojo"}],"_id":"Q4xVGud3xQEnltj3"}
+{"name":"Auriculares Inalámbricos","description":"Auriculares bluetooth con cancelación de ruido y batería de larga duración.\n","price":"3500","stock":"80","attributes":[{"key":"Conectividad","value":"Bluetooth 5.0"},{"key":"Duración de Batería","value":"20 horas"},{"key":"Color","value":"Negro"}],"_id":"msexljyVp3tsMdkU"}
+{"name":"Smartphone","description":"Smartphone de última generación con cámara de alta resolución.","price":"80000","stock":"","attributes":[{"key":"Color","value":"Azul"},{"key":"Pantalla","value":"6.5 pulgadas"},{"key":"Cámara","value":"48 MP"}],"_id":"mLjm71lacUzOX9pt"}

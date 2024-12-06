@@ -84,7 +84,7 @@ const ItemManagerNoSQL = () => {
     <div className="container">
       <h1>Item Manager (NoSQL)</h1>
       {error && <div className="error">{error}</div>}
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="item-form">
         <input
           type="text"
           placeholder="Name"
@@ -110,52 +110,81 @@ const ItemManagerNoSQL = () => {
           value={form.stock}
           onChange={(e) => setForm({ ...form, stock: e.target.value })}
         />
-        <div>
-          <label>Atributos adicionales</label>
+        <div className="attributes-section">
           <button type="button" onClick={handleAddNewAttribute}>+</button>
-          {form.attributes.map((attribute, index) => (
-            <div key={index} className="attribute">
-              <input
-                type="text"
-                placeholder="Atributo (ej. color)"
-                value={attribute.key}
-                onChange={(e) => handleAttributeChange(e, index, "key")}
-              />
-              <input
-                type="text"
-                placeholder="Valor"
-                value={attribute.value}
-                onChange={(e) => handleAttributeChange(e, index, "value")}
-              />
-            </div>
-          ))}
+          <table className="attributes-table">
+            <thead>
+              <tr>
+                <th>Atributo</th>
+                <th>Valor</th>
+              </tr>
+            </thead>
+            <tbody>
+              {form.attributes.map((attribute, index) => (
+                <tr key={index}>
+                  <td>
+                    <input
+                      type="text"
+                      placeholder="Atributo (ej. color)"
+                      value={attribute.key}
+                      onChange={(e) => handleAttributeChange(e, index, "key")}
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="text"
+                      placeholder="Valor"
+                      value={attribute.value}
+                      onChange={(e) => handleAttributeChange(e, index, "value")}
+                    />
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
         <button type="submit">{editingId ? "Update" : "Create"}</button>
       </form>
-      <ul>
-        {items.map((item) => (
-          <li key={item._id}>
-            {item.name} - ${item.price} ({item.stock} in stock)
-            <button onClick={() => handleEdit(item)}>Edit</button>
-            <button onClick={() => handleDelete(item._id)}>Delete</button>
-            <div>
+
+      <div className="item-list">
+        <ul>
+          {items.map((item) => (
+            <li key={item._id} className="item">
+              <div className="item-details">
+                <h3>{item.name}</h3>
+                <p>{item.description}</p>
+                <p><strong>Price:</strong> ${item.price} | <strong>Stock:</strong> {item.stock}</p>
+              </div>
               {item.attributes && item.attributes.length > 0 && (
-                <div>
-                  <h3>Attributes:</h3>
-                  <ul>
-                    {item.attributes.map((attribute, index) => (
-                      <li key={index}>{attribute.key}: {attribute.value}</li>
-                    ))}
-                  </ul>
+                <div className="item-attributes">
+                  <table className="attributes-table">
+                    <thead>
+                      <tr>
+                        <th>Atributo</th>
+                        <th>Valor</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {item.attributes.map((attribute, index) => (
+                        <tr key={index}>
+                          <td>{attribute.key}</td>
+                          <td>{attribute.value}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
                 </div>
               )}
-            </div>
-          </li>
-        ))}
-      </ul>
+              <div className="item-actions">
+                <button onClick={() => handleEdit(item)}>Edit</button>
+                <button onClick={() => handleDelete(item._id)}>Delete</button>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };
 
 export default ItemManagerNoSQL;
-
