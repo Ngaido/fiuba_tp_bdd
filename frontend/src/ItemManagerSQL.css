@@ -1,0 +1,104 @@
+/* General container styles */
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Form styles */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+input, textarea {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Button styles */
+button {
+  padding: 10px 15px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  align-self: flex-start;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* Item list styles */
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  margin-bottom: 10px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+li div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+li div strong {
+  font-size: 18px;
+}
+
+li div p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #666;
+}
+
+button.edit, button.delete {
+  padding: 8px 12px;
+  font-size: 14px;
+  margin-left: 10px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+}
+
+button.edit {
+  background-color: #ffa500;
+  color: white;
+}
+
+button.edit:hover {
+  background-color: #ff8c00;
+}
+
+button.delete {
+  background-color: #f44336;
+  color: white;
+}
+
+button.delete:hover {
+  background-color: #e53935;
+}
